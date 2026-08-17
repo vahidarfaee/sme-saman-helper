@@ -12,6 +12,8 @@ jobs:
         with:
           flutter-version: "3.24.5"
           channel: stable
+      - name: Create Android project files
+        run: flutter create --platforms=android --project-name=sme_saman_panel .
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
