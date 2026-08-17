@@ -88,7 +88,7 @@ class _AuthPageState extends State<AuthPage> {
         const SizedBox(height: 18), FilledButton(onPressed: submit, child: Text(firstRun ? 'ساخت مدیر' : 'ورود')),
         const SizedBox(height: 20), const Text('نسخه 26-1405 — طراحی و توسعه و اهدا شده توسط وحید ارفعی — سال 1405', textAlign: TextAlign.center, style: TextStyle(fontSize: 11, color: Colors.grey)),
       ]))),
-    )),
+     ))),
   );
 }
 
