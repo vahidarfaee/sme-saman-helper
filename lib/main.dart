@@ -1,8 +1,7 @@
-
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 import 'package:flutter/material.dart';
-import 'package:path/path.dart';
+import 'package:path/path.dart' as p;
 import 'package:sqflite/sqflite.dart';
 
 String hashPassword(String value) => sha256.convert(utf8.encode(value)).toString();
@@ -10,7 +9,7 @@ String hashPassword(String value) => sha256.convert(utf8.encode(value)).toString
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final db = await openDatabase(
-    join(await getDatabasesPath(), 'sme_saman.db'),
+    p.join(await getDatabasesPath(), 'sme_saman.db'),
     version: 1,
     onCreate: (database, version) async {
       await database.execute('CREATE TABLE agents (code TEXT PRIMARY KEY, password_hash TEXT NOT NULL, name TEXT NOT NULL, role TEXT NOT NULL, active INTEGER NOT NULL DEFAULT 1)');
